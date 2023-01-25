@@ -8,7 +8,8 @@ const router = new Router();
 router.post('/new', [
     check('name')
         .notEmpty().withMessage('Required field')
-        .isAlphanumeric().withMessage('It must be alphanumeric')
+        // .isAlphanumeric().withMessage('It must be alphanumeric')
+        .matches('^[a-zA-Z\u00C0-\u00FF]*$').withMessage('It must be alphanumeric.')
         .isLength({ min: 3 }).withMessage('Name must contain at least 3 characters')
         .trim()
         .escape(),
