@@ -22,7 +22,7 @@ const listEmails = async (req, res) => {
 
     const options = {
         page,
-        limit: 3,
+        limit: 15,
         customLabels
     };
 
